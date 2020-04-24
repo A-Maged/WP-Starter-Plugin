@@ -1,0 +1,5 @@
+
+mix-manifest.json
+build
+node_modules
+vendor

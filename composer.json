@@ -1,0 +1,25 @@
+{
+    "name": "a-maged/custom-wp-starter-plugin",
+    "autoload": {
+        "psr-4": {
+            "App\\": "App/"
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "../../mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+            "../{$name}/": [
+                "type:wordpress-plugin"
+            ]
+        }
+    },
+    "require": {
+        "illuminate/container": "^7.7",
+        "tightenco/collect": "^7.6"
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^5.0"
+    }
+}
