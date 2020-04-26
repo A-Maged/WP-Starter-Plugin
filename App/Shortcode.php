@@ -37,7 +37,7 @@ class Shortcode
 
     public function add_shortcode($atts)
     {
-        return "<div class='m-5'>test cooooode</div>";
+        return get_the_content("", false, $atts['id']);
     }
 
     public function add_column_titles($columns)
