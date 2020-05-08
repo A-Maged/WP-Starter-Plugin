@@ -15,7 +15,7 @@ class Custom_Mailer
         $this->email_attachments = $attachments;
 
         /* Setup Before send email */
-        add_action('phpmailer_init', [$this, 'add_attachements_to_php_mailer']);
+        add_action('phpmailer_init', [$this, 'add_attachments_to_php_mailer']);
         add_filter('wp_mail_content_type', [$this, 'set_content_type']);
         add_filter('wp_mail_from', [$this, 'set_wp_mail_from']);
         add_filter('wp_mail_from_name', [$this, 'wp_mail_from_name']);
@@ -25,7 +25,7 @@ class Custom_Mailer
         
         /* Cleanup after send email */
         $this->email_attachments = [];
-        remove_action('phpmailer_init', [$this, 'add_attachements_to_php_mailer']);
+        remove_action('phpmailer_init', [$this, 'add_attachments_to_php_mailer']);
         remove_filter('wp_mail_content_type', [$this, 'set_content_type']);
         remove_filter('wp_mail_from', [$this, 'set_wp_mail_from']);
         remove_filter('wp_mail_from_name', [$this, 'wp_mail_from_name']);
@@ -33,7 +33,7 @@ class Custom_Mailer
         return $is_sent;
     }
 
-    public function add_attachements_to_php_mailer(&$phpmailer)
+    public function add_attachments_to_php_mailer(&$phpmailer)
     {
         $phpmailer->SMTPKeepAlive=true;
         
