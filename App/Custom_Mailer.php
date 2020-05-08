@@ -51,7 +51,7 @@ class Custom_Mailer
         /* Add attachments to mail */
         foreach ($this->email_attachments as $attachment) {
             if (file_exists($attachment['path'])) {
-                $phpmailer->AddEmbeddedImage($attachment['path'], $attachment['cid'], $attachment['name']);
+                $phpmailer->AddEmbeddedImage($attachment['path'], $attachment['cid']);
             }
         }
     }
