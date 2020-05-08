@@ -36,13 +36,13 @@ class Custom_Mailer
     public function add_attachements_to_php_mailer(&$phpmailer)
     {
         $phpmailer->SMTPKeepAlive=true;
-        $phpmailer->IsSMTP();
-        $phpmailer->Port = 587;
-        $phpmailer->SMTPAuth = true;
-
+        
         /* Sendgrid */
         if (defined('SENDGRID_PASSWORD')) {
+            $phpmailer->IsSMTP();
             $phpmailer->Host="smtp.sendgrid.net";
+            $phpmailer->Port = 587;
+            $phpmailer->SMTPAuth = true;
             $phpmailer->SMTPSecure = 'tls';
             $phpmailer->Username="apikey";
             $phpmailer->Password = SENDGRID_PASSWORD;   /* api key from sendgrid */
