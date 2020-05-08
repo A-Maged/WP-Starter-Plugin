@@ -10,7 +10,8 @@ class Shortcode
 
     public function __construct($args = array(
         'tag' => null,
-        'post_type' => null
+        'post_type' => null,
+        "show_custom_column" => false
     ))
     {
         if ($args['tag']) {
